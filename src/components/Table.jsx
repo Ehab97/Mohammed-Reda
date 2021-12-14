@@ -35,7 +35,7 @@ function Table({dataTable}) {
   <tr>
     <th>ProjectID</th>
     <th>UserID</th>
-    <th>Time</th>
+    <th>Total Time in Days </th>
   </tr>
  
  {dataTable&& dataTable.map(data=><TableCol data={data} key={data}/>)}

@@ -73,8 +73,16 @@ function AddFile({setData}) {
   }
   return (
     <div className='center'>
-      {/* <input type="file" className="custom-file-input"
-             onChange={changeHandler}/> */}
+         <CSVReader
+        onDrop={handleOnFileLoad}
+        onError={handleOnError}
+        addRemoveButton
+        removeButtonColor='#659cef'
+        onRemoveFile={handleOnRemoveFile}
+      >
+       <span>Drop CSV file here or click to upload.</span>
+      </CSVReader>
+  or
               <CSVReader
         ref={buttonRef}
         onFileLoad={handleOnFileLoad}
@@ -95,44 +103,41 @@ function AddFile({setData}) {
             <button
               type='button'
               onClick={handleOpenDialog}
-              // style={{
-              //   borderRadius: '8px',
-              //   marginLeft: 0,
-              //   marginRight: 0,
-              //   width: 'auto',
-              //   paddingLeft: 0,
-              //   paddingRight: 0,
-              //   height:'40px'
-              // }}
+              style={{
+                borderRadius: 0,
+                marginLeft: 0,
+                marginRight: 0,
+                width: '40%',
+                paddingLeft: 0,
+                paddingRight: 0
+              }}
             >
               Browse file
             </button>
             <div
-              // style={{
-              //   borderWidth: 1,
-              //   borderStyle: 'solid',
-              //   borderColor: '#ccc',
-              //   height: 45,
-              //   lineHeight: 2.5,
-              //   marginTop: 5,
-              //   marginBottom: 5,
-              //   paddingLeft: 13,
-              //   paddingTop: 3,
-              //   width: '60%'
-              // }}
+              style={{
+                borderWidth: 1,
+                borderStyle: 'solid',
+                borderColor: '#ccc',
+                height: 45,
+                lineHeight: 2.5,
+                marginTop: 5,
+                marginBottom: 5,
+                paddingLeft: 13,
+                paddingTop: 3,
+                width: '60%'
+              }}
             >
               {file && file.name}
             </div>
             <button
-              // style={{
-              //   borderRadius: '8px',
-              //   marginLeft: 0,
-              //   marginRight: 0,
-              //   width: 'auto',
-              //   paddingLeft: 0,
-              //   paddingRight: 0,
-              //   height:'40px'
-              // }}
+               style={{
+                borderRadius: 0,
+                marginLeft: 0,
+                marginRight: 0,
+                paddingLeft: 20,
+                paddingRight: 20
+              }}
               onClick={handleRemoveFile}
             >
               Remove
